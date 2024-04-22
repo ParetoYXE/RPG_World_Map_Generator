@@ -38,7 +38,7 @@ Utilize the provided functions to generate and display diverse game worlds.
 Usage Example:
 
 ```python
-from map_gen import generate_blank_world, generate_forest, generate_rivers, generate_roads, display_world, generate_towns
+from map_gen import generate_blank_world, generate_forest, generate_rivers, generate_roads, display_world_with_info, generate_towns, generate_town_info
 
 world_size = 50
 world = generate_blank_world(world_size)
@@ -49,5 +49,7 @@ generate_rivers(world, num_rivers=10, max_length=500, flow_deviation=0.8, cluste
 town_locations = generate_towns(world, num_towns=50, min_distance=10, marker='s', color='red')
 generate_roads(world, town_locations)
 
-display_world(world, title="World with Towns and Roads")
+town_info = generate_town_info(world, town_locations)
+
+display_world_with_info(world, town_info, title="World with Towns and Roads")
 ```
